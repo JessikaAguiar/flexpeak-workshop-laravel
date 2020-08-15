@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +23,7 @@ Route::get('contatos', function (){
     // return \App\Contato::all();
 
     $contatos = \App\Contato::all();
-    
+
     // Retornando a view contatos, com parametros
     return view('contatos', compact('contatos'));
 });
@@ -39,3 +39,13 @@ Route::get('salvar', function () {
 
     return 'Contato salvo com sucesso <h1>'.$contato->nome.'</h1>';
 });
+
+// Criando uma rota para formulario
+Route::get('formulario', function () {
+    return view('formulario');
+});
+
+
+// salvando e retornando para contatos
+Route::post('contatos', 'ContatoController@store');
+

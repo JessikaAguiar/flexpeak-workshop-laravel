@@ -1,5 +1,20 @@
 <h1>Lista de Contatos</h1>
 
+<a href="formulario">Cadastrar Contato</a>
+
+<ul>
+    @foreach ($contatos as $contato)
+    <li>
+        Nome: {{$contato->nome}} 
+        <br>
+        Telefone: {{$contato->telefone}}
+    </li>
+    @endforeach
+</ul>
+
+
+
+
 <table border="2">
     <thead>
         <tr>
