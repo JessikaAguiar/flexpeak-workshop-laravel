@@ -19,17 +19,17 @@ Route::get('/', function () {
 
 // Criando uma nova rota
 Route::get('contatos', function (){
-    return 'Chegou em contatos';
+    return \App\Contato::all();
 });
 
 // Criando uma nova rota para salvar dados
 Route::get('salvar', function () {
     $contato = new \App\Contato();
 
-    $contato->nome = "Jessika";
+    $contato->nome = "Apollo Aguiar Brito";
     $contato->telefone = time();
 
     $contato->save();
 
-    return 'Contato salvo com sucesso';
+    return 'Contato salvo com sucesso <h1>'.$contato->nome.'</h1>';
 });
