@@ -19,7 +19,13 @@ Route::get('/', function () {
 
 // Criando uma nova rota
 Route::get('contatos', function (){
-    return \App\Contato::all();
+    // Retornando todos os contatos
+    // return \App\Contato::all();
+
+    $contatos = \App\Contato::all();
+    
+    // Retornando a view contatos, com parametros
+    return view('contatos', compact('contatos'));
 });
 
 // Criando uma nova rota para salvar dados
